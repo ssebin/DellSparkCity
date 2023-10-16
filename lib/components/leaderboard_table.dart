@@ -7,7 +7,7 @@ class LeaderboardTable extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
-      width: 800,
+      width: 750,
       height: 370,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -31,7 +31,7 @@ class LeaderboardTable extends StatelessWidget {
               child: TextField(
                 style: const TextStyle(fontSize: 14.0),
                 decoration: InputDecoration(
-                  hintText: 'Search a team',
+                  hintText: 'Search a floor',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(4.0),
                   ),
@@ -50,7 +50,7 @@ class LeaderboardTable extends StatelessWidget {
                 DataTable(
                   columns: const [
                     DataColumn(label: Text('No.')),
-                    DataColumn(label: Text('Team')),
+                    DataColumn(label: Text('Floor')),
                     DataColumn(label: Text('Consumption/kWh')),
                     DataColumn(label: Text('Renewable Energy/%')),
                     DataColumn(label: Text('Cost/RM')),
@@ -66,10 +66,10 @@ class LeaderboardTable extends StatelessWidget {
                         ),
                         cells: [
                           DataCell(Text('Row ${index + 1}')),
-                          const DataCell(Text('Team')),
-                          const DataCell(Text('123')),
-                          const DataCell(Text('80%')),
-                          const DataCell(Text('200')),
+                          DataCell(Text('Floor')),
+                          DataCell(Text('123')),
+                          DataCell(Text('80%')),
+                          DataCell(Text('200')),
                         ],
                       );
                     },
