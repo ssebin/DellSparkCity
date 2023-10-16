@@ -11,16 +11,18 @@ class TipsCard extends StatelessWidget {
 
   final CarouselController _controller = CarouselController();
 
+  TipsCard({super.key});
+
   @override
   Widget build(BuildContext context) {
-    double cardHeight = 310; 
+    double cardHeight = 260; //310
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Title and Icon
         Padding(
-          padding: const EdgeInsets.only(left: 30.0, top: 0, bottom: 0),
+          padding: const EdgeInsets.only(left: 5, top: 0, bottom: 5),
           child: Row(
             children: [
               const Text(
@@ -30,12 +32,12 @@ class TipsCard extends StatelessWidget {
                   fontWeight: FontWeight.normal,
                 ),
               ),
-              SizedBox(width: 2),
+              const SizedBox(width: 2),
               SvgPicture.asset('assets/icons/lightbulb 1.svg',height: 14, width: 12),
             ],
           ),
         ),
-        SizedBox(height: 0),
+        const SizedBox(height: 0),
 
         // Carousel
         LayoutBuilder(
@@ -54,7 +56,9 @@ class TipsCard extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
-                      child: Container(
+                      elevation: 4.0, // Add shadow
+                      shadowColor: Colors.grey.withOpacity(0.8), // Shadow color
+                      child: SizedBox(
                         width: width,
                         height: cardHeight,
                         child: Padding(
@@ -70,10 +74,10 @@ class TipsCard extends StatelessWidget {
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(height: 10),
+                                const SizedBox(height: 10),
                                 Text(
                                   tipsList[index],
-                                  style: TextStyle(fontSize: 16),
+                                  style: const TextStyle(fontSize: 16),
                                 ),
                               ],
                             ),
@@ -92,7 +96,7 @@ class TipsCard extends StatelessWidget {
                 ),
                 Positioned(
                   top: cardHeight / 2 - 15, // Center vertically
-                  left: 40, // Inside the card
+                  left: 15, // Inside the card
                   child: InkWell(
                     splashColor: Colors.transparent,
                     onTap: () => _controller.previousPage(),
@@ -101,7 +105,7 @@ class TipsCard extends StatelessWidget {
                 ),
                 Positioned(
                   top: cardHeight / 2 - 15, // Center vertically
-                  right: 40, // Inside the card
+                  right: 15, // Inside the card
                   child: InkWell(
                     splashColor: Colors.transparent,
                     onTap: () => _controller.nextPage(),
