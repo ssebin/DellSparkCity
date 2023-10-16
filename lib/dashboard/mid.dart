@@ -8,7 +8,7 @@ class MidSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 25.0),
+      padding: EdgeInsets.only(top: 25.0, left: 40, right: 40),
       child: Column(
         children: [
           Row(
