@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+//import 'package:dart_openai/dart_openai.dart';
 
 class ChatGPTCard extends StatelessWidget {
   @override
@@ -27,7 +28,7 @@ class ChatGPTCard extends StatelessWidget {
         SizedBox(height: 0),
         Padding(
           padding: const EdgeInsets.only(
-              left: 16.0, right: 8.0, top: 8.0, bottom: 8.0),
+              left: 16.0, right: 8.0, top: 0, bottom: 0),
           child: Container(
             height: 310,
             //constraints: BoxConstraints(maxHeight: 310),

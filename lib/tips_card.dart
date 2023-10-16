@@ -13,14 +13,14 @@ class TipsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double cardHeight = 340 - 30; 
+    double cardHeight = 310; 
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Title and Icon
         Padding(
-          padding: const EdgeInsets.only(left: 25.0, top: 0, bottom: 0),
+          padding: const EdgeInsets.only(left: 30.0, top: 0, bottom: 0),
           child: Row(
             children: [
               const Text(
@@ -35,7 +35,7 @@ class TipsCard extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 5),
+        SizedBox(height: 0),
 
         // Carousel
         LayoutBuilder(
