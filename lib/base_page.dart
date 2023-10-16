@@ -131,7 +131,7 @@ class BasePage extends StatelessWidget {
                       Navigator.of(context).pushReplacement(
                         PageRouteBuilder(
                           pageBuilder: (context, animation1, animation2) =>
-                              const BasePage(
+                              BasePage(
                                   currentPage: 'Dashboard',
                                   child: DashboardPage()),
                           transitionDuration: Duration.zero,

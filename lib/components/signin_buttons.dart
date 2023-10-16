@@ -19,7 +19,7 @@ class SignInButtons extends StatelessWidget {
               // TODO: Implement Google sign-in logic
               //for now just to go to dashboard
               Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (context) => const BasePage(child: DashboardPage()),
+                builder: (context) => BasePage(child: DashboardPage()),
               ));
             },
             style: ElevatedButton.styleFrom(

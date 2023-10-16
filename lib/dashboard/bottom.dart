@@ -21,8 +21,10 @@ class _AirConditioningControlWidgetState extends State<BottomSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-      Container(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
           width: 530,
           height: 300,
           decoration: BoxDecoration(
@@ -42,18 +44,18 @@ class _AirConditioningControlWidgetState extends State<BottomSection> {
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(children: [
-                      const Text(
-                        "Discussion Room",
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                    Column(
+                      children: [
+                        const Text(
+                          "Discussion Room",
+                          style: TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: 12.0),
-                      Row(
-                        children: [
+                        const SizedBox(width: 12.0),
+                        Row(children: [
                           const Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -119,12 +121,11 @@ class _AirConditioningControlWidgetState extends State<BottomSection> {
                                     ))
                               ],
                             ),
-                          ]),
-                          const SizedBox(
-                              height:
-                                  16.0), // Add horizontal spacing between the columns
 
-                          Column(children: [
+                            const SizedBox(
+                                height:
+                                    16.0), // Add horizontal spacing between the columns
+
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
@@ -169,59 +170,58 @@ class _AirConditioningControlWidgetState extends State<BottomSection> {
                                     ))
                               ],
                             ),
-                          ]),
-                          const SizedBox(
-                              height:
-                                  16.0), // Add horizontal spacing between the columns
 
-                          Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Container(
-                                    decoration: const BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Colors.blue,
-                                    ),
-                                    child: IconButton(
-                                      onPressed: () {
-                                        // Add logic for the "+" button here
-                                      },
-                                      icon: const Icon(
-                                        Icons.add,
-                                        color: Colors.white,
-                                      ),
+                            const SizedBox(
+                                height:
+                                    16.0), // Add horizontal spacing between the columns
+
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Container(
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.blue,
+                                  ),
+                                  child: IconButton(
+                                    onPressed: () {
+                                      // Add logic for the "+" button here
+                                    },
+                                    icon: const Icon(
+                                      Icons.add,
+                                      color: Colors.white,
                                     ),
                                   ),
-                                  SizedBox(
-                                    width:
-                                        16.0, // Add spacing between the buttons
+                                ),
+                                const SizedBox(
+                                  width:
+                                      16.0, // Add spacing between the buttons
+                                ),
+                                Container(
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.blue,
                                   ),
-                                  Container(
-                                    decoration: const BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Colors.blue,
-                                    ),
-                                    child: IconButton(
-                                      onPressed: () {
-                                        // Add logic for the "-" button here
-                                      },
-                                      icon: const Icon(
-                                        Icons.remove,
-                                        color: Colors.white,
-                                      ),
+                                  child: IconButton(
+                                    onPressed: () {
+                                      // Add logic for the "-" button here
+                                    },
+                                    icon: const Icon(
+                                      Icons.remove,
+                                      color: Colors.white,
                                     ),
                                   ),
-                                ],
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ])
-                  ])))
-    ]);
+                                ),
+                              ],
+                            ),
+                          ]),
+                        ]),
+                      ],
+                    ),
+                  ])),
+        )
+      ],
+    );
   }
 //}
 }
