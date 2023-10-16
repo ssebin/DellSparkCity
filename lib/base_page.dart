@@ -31,8 +31,8 @@ class BasePage extends StatelessWidget {
           ),
           child: AppBar(
             title: const Column(
-              //mainAxisAlignment: MainAxisAlignment.center,
-              //crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: 20.0, right: 20.0),
@@ -41,7 +41,7 @@ class BasePage extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Roboto',
                       color: Color.fromRGBO(6, 114, 203, 1),
-                      fontSize: 22,
+                      fontSize: 18,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
