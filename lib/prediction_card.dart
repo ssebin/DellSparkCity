@@ -97,15 +97,17 @@ class _PredictionsCardState extends State<PredictionsCard> {
               const Spacer(), // This will push the button down
               SizedBox(
                 width: double.infinity, // Makes the button occupy the whole width
-                child: ElevatedButton(
+                child: TextButton(
                   onPressed: () {},
-                  style: ElevatedButton.styleFrom(
+                  style: TextButton.styleFrom(
                     backgroundColor: const Color(0xFF0672CB),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10), // Setting corner radius here
                     ),
                   ),
-                  child: const Text('Details'),
+                  child: const Text('Details', style: TextStyle(
+                    color: Colors.white,
+                  ),),
                 ),
               ),
             ],
@@ -167,15 +169,18 @@ class _PredictionsCardState extends State<PredictionsCard> {
               const Spacer(), // This will push the button down
               SizedBox(
                 width: double.infinity, // Makes the button occupy the whole width
-                child: ElevatedButton(
+                child: TextButton(
                   onPressed: () {},
-                  style: ElevatedButton.styleFrom(
+                  style: TextButton.styleFrom(
                     backgroundColor: const Color(0xFF0672CB),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10), // Setting corner radius here
                     ),
                   ),
-                  child: const Text('Calculate'),
+                  child: const Text('Calculate',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),),
                 ),
               ),
             ],
