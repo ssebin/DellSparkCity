@@ -1,4 +1,5 @@
 import 'package:dellsparkcity/chatgpt_card.dart';
+import 'package:dellsparkcity/prediction_card.dart';
 import 'package:dellsparkcity/tips_card.dart';
 import 'package:flutter/material.dart';
 // import 'package:signin_example/components/chatgpt_card.dart';
@@ -13,7 +14,7 @@ class InsightsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Padding(
-          padding: EdgeInsets.only(top: 10.0, bottom: 5.0, left: 25.0, right:0),
+          padding: EdgeInsets.only(top: 10.0, bottom: 5.0, left: 30.0, right:0),
           child: Text(
             'Insights',
             style: TextStyle(

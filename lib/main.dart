@@ -1,7 +1,7 @@
 
 import 'package:dellsparkcity/dashboard.dart';
 import 'package:flutter/material.dart';
-//import 'base_page.dart';
+import 'base_page.dart';
 
 void main() => runApp(MyApp());
 
