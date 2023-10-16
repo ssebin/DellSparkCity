@@ -5,6 +5,7 @@ class BasePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+  
         backgroundColor: Colors.white,
         title: Text(
           'Dell Spark City',
