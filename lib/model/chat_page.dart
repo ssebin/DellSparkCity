@@ -40,6 +40,7 @@ class _ChatPageState extends State<ChatPage> {
     return Container(
       height: 370,
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(0),
           child: AppBar(

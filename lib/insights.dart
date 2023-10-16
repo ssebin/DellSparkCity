@@ -4,6 +4,7 @@ import 'package:dellsparkcity/model/chat_api.dart';
 import 'package:dellsparkcity/model/chat_page.dart';
 import 'package:dellsparkcity/prediction_card.dart';
 import 'package:dellsparkcity/tips_card.dart';
+import 'package:dellsparkcity/tips_card2.dart';
 import 'package:flutter/material.dart';
 
 class InsightsPage extends StatelessWidget {
@@ -46,7 +47,8 @@ class InsightsPage extends StatelessWidget {
                   children: [
                     Expanded(
                       flex: 1,
-                      child: TipsCard(),
+                      child: TipsCard2(),
+                      //child: TipsCard(),
                     ),
                     const SizedBox(width: 2),
                     const Expanded(
@@ -64,6 +66,8 @@ class InsightsPage extends StatelessWidget {
           ),
         ),
       ),
+      backgroundColor: Color.fromRGBO(240, 241, 243, 1),// Set the background color to grey
     );
   }
 }
+
