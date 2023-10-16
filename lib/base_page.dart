@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'dashboard.dart'; // Import your dashboard page
+import 'dashboard/dashboard.dart'; // Import your dashboard page
 import 'insights.dart'; // Import your insights page
 import 'community.dart'; // Import your community page
 import 'package:flutter_svg/svg.dart';

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "202737392623",
+    "project_id": "dellsparkcity",
+    "storage_bucket": "dellsparkcity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202737392623:android:e8216596ff6d817a30341a",
+        "android_client_info": {
+          "package_name": "com.example.dellsparkcity"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmuOzbtOx2Yz5ZQLE5dgOEg-yhp0ed1_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
