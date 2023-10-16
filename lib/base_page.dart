@@ -5,6 +5,7 @@ import 'dashboard.dart'; // Import your dashboard page
 import 'insights.dart'; // Import your insights page
 import 'community.dart'; // Import your community page
 import 'package:flutter_svg/svg.dart';
+import 'signin.dart';
 
 class BasePage extends StatelessWidget {
   final Widget child;
@@ -71,7 +72,10 @@ class BasePage extends StatelessWidget {
                       0, 30), // Adjust the vertical offset as needed
                   onSelected: (value) {
                     if (value == 'logout') {
-                      // Perform logout actions here
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) =>
+                            SignInScreen(), // Navigate to SignInScreen
+                      ));
                     }
                   },
                   itemBuilder: (BuildContext context) =>

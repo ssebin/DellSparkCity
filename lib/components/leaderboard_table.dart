@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math'; // Import the dart:math library
 
 class LeaderboardTable extends StatelessWidget {
   const LeaderboardTable({super.key});
@@ -65,11 +66,12 @@ class LeaderboardTable extends StatelessWidget {
                               : Colors.white,
                         ),
                         cells: [
-                          DataCell(Text('Row ${index + 1}')),
-                          DataCell(Text('Floor')),
-                          DataCell(Text('123')),
-                          DataCell(Text('80%')),
-                          DataCell(Text('200')),
+                          DataCell(Text('${index + 1}')),
+                          DataCell(Text('${Random().nextInt(30) + 1}')),
+                          DataCell(Text('${Random().nextInt(1000) + 1}')),
+                          DataCell(Text('${Random().nextInt(40)}')),
+                          DataCell(Text(
+                              '${(Random().nextDouble() * 3000).toStringAsFixed(2)}')),
                         ],
                       );
                     },
