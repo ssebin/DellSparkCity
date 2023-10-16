@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class PredictionsCard extends StatefulWidget {
+  const PredictionsCard({super.key});
+
   @override
   _PredictionsCardState createState() => _PredictionsCardState();
 }
@@ -15,24 +17,25 @@ class _PredictionsCardState extends State<PredictionsCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 22, right: 5), // Add left padding 
+      padding: const EdgeInsets.only(left: 22, right: 5), // Add left padding
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 5.0),
+          const Padding(
+            padding: EdgeInsets.only(left: 5.0, bottom: 5),
             child: Text(
               'Predictions',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 0),
           Row(
             children: [
-              Expanded(child: _buildCardWithFixedSize(_energyConsumptionCard())),
-              SizedBox(width: 10),
+              Expanded(
+                  child: _buildCardWithFixedSize(_energyConsumptionCard())),
+              const SizedBox(width: 10),
               Expanded(child: _buildCardWithFixedSize(_renewableEnergyCard())),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Expanded(child: _buildCardWithFixedSize(_carbonEmissionCard())),
             ],
           ),
@@ -43,104 +46,106 @@ class _PredictionsCardState extends State<PredictionsCard> {
 
   // Utility function to apply the fixed width and height for each card
   Widget _buildCardWithFixedSize(Widget child) {
-    return Container(
+    return SizedBox(
       height: 260, // Fixed height
       child: child,
     );
   }
 
   Widget _energyConsumptionCard() {
-  return Card(
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: Padding(
-      padding: const EdgeInsets.all(20.0), 
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('Energy Consumption',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-          SizedBox(height: 4),
-          Text('What is the trend?',
-              style: TextStyle(fontSize: 14, color: Colors.grey)),
-          SizedBox(height: 8),
-          Text('Next Month: 450 kWh (RM 490)',
-              style: TextStyle(fontSize: 14, color: Color(0xFF0672CB))),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-            child: Text(
-              'The energy consumption is expected to follow a moderate increase due to upcoming weather changes and anticipated usage trends.',
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
-            ),
-          ),
-          Spacer(), // This will push the button down
-          SizedBox(
-            width: double.infinity, // Makes the button occupy the whole width
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text('Details'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF0672CB),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10), // Setting corner radius here
-                ),
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Energy Consumption',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+            const SizedBox(height: 4),
+            const Text('What is the trend?',
+                style: TextStyle(fontSize: 14, color: Colors.grey)),
+            const SizedBox(height: 8),
+            const Text('Next Month: 450 kWh (RM 490)',
+                style: TextStyle(fontSize: 14, color: Color(0xFF0672CB))),
+            const Padding(
+              padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
+              child: Text(
+                'The energy consumption is expected to follow a moderate increase due to upcoming weather changes and anticipated usage trends.',
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
               ),
             ),
-          ),
-          //SizedBox(height: 8), // Space from the bottom
-        ],
+            const Spacer(), // This will push the button down
+            SizedBox(
+              width: double.infinity, // Makes the button occupy the whole width
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF0672CB),
+                  shape: RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.circular(10), // Setting corner radius here
+                  ),
+                ),
+                child: const Text('Details'),
+              ),
+            ),
+            //SizedBox(height: 8), // Space from the bottom
+          ],
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
 
   Widget _renewableEnergyCard() {
-  return Card(
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: Padding(
-      padding: const EdgeInsets.all(20.0), 
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('Renewable Energy',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-          SizedBox(height: 4),
-          Text('How much can I save?',
-              style: TextStyle(fontSize: 14, color: Colors.grey)),
-          SizedBox(height: 8),
-          _buildEnergyCounter('Solar Panel', solarPanelCount,
-              (val) => setState(() => solarPanelCount = val)),
-          SizedBox(height: 6),
-          _buildEnergyCounter('Biomass', biomassCount,
-              (val) => setState(() => biomassCount = val)),
-          SizedBox(height: 6),
-          _buildEnergyCounter('Hydrogen', hydrogenCount,
-              (val) => setState(() => hydrogenCount = val)),
-          Spacer(), // This will push the button down
-          SizedBox(
-            width: double.infinity, // Makes the button occupy the whole width
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text('Calculate'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF0672CB),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10), // Setting corner radius here
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Renewable Energy',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+            const SizedBox(height: 4),
+            const Text('How much can I save?',
+                style: TextStyle(fontSize: 14, color: Colors.grey)),
+            const SizedBox(height: 8),
+            _buildEnergyCounter('Solar Panel', solarPanelCount,
+                (val) => setState(() => solarPanelCount = val)),
+            const SizedBox(height: 6),
+            _buildEnergyCounter('Biomass', biomassCount,
+                (val) => setState(() => biomassCount = val)),
+            const SizedBox(height: 6),
+            _buildEnergyCounter('Hydrogen', hydrogenCount,
+                (val) => setState(() => hydrogenCount = val)),
+            const Spacer(), // This will push the button down
+            SizedBox(
+              width: double.infinity, // Makes the button occupy the whole width
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF0672CB),
+                  shape: RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.circular(10), // Setting corner radius here
+                  ),
                 ),
+                child: const Text('Calculate'),
               ),
             ),
-          ),
-          //SizedBox(height: 5), // Space from the bottom
-        ],
+            //SizedBox(height: 5), // Space from the bottom
+          ],
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
 
-Widget _carbonEmissionCard() {
+  Widget _carbonEmissionCard() {
   // Sample data for the chart and total emission calculation
   List<PieChartSectionData> pieData = [
     PieChartSectionData(color: Colors.green, value: 28.6),
@@ -158,31 +163,31 @@ Widget _carbonEmissionCard() {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Energy Consumption',
+          const Text('Carbon Emissions',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-          SizedBox(height: 4),
-          Text('Environmental Impact',
+          const SizedBox(height: 4),
+          const Text('Environmental Impact',
               style: TextStyle(fontSize: 14, color: Colors.grey)),
-          SizedBox(height: 8),
-
+          const SizedBox(height: 8),
           Expanded(
             child: Container(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(0),
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.white),
-                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.transparent),
+                borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // Adjusted the inner container dimensions for the PieChart
                   Expanded(
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          PieChart(
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        SizedBox(
+                          height: 120,
+                          width: 120,
+                          child: PieChart(
                             PieChartData(
                               borderData: FlBorderData(show: false),
                               sectionsSpace: 0,
@@ -190,50 +195,58 @@ Widget _carbonEmissionCard() {
                               sections: pieData,
                             ),
                           ),
-                          Column(
+                        ),
+                        Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
+                            const Text(
                               'Total Emission:',
-                              style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
                             ),
                             Text(
                               '$totalEmission kg',
-                              style: TextStyle(fontSize: 14, color: Colors.blue),
+                              style: const TextStyle(
+                                  fontSize: 14, color: Colors.blue),
                               textAlign: TextAlign.center,
                             ),
                           ],
                         ),
-                        ],
-                      ),
+                      ],
                     ),
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       // Label 1
                       Row(
                         children: [
-                          CircleAvatar(backgroundColor: Colors.green, radius: 5),
+                          CircleAvatar(
+                              backgroundColor: Colors.green, radius: 5),
                           SizedBox(width: 4),
-                          Text('Refrigerator', style: TextStyle(fontSize: 12)),
+                          Text('Refrigerator',
+                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300)),
                         ],
                       ),
                       // Label 2
                       Row(
                         children: [
-                          CircleAvatar(backgroundColor: Colors.blue, radius: 5), 
+                          CircleAvatar(
+                              backgroundColor: Colors.blue, radius: 5),
                           SizedBox(width: 4),
-                          Text('Computer', style: TextStyle(fontSize: 12)),
+                          Text('Computer', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300)),
                         ],
                       ),
                       // Label 3
                       Row(
                         children: [
-                          CircleAvatar(backgroundColor: Colors.pink, radius: 5), 
+                          CircleAvatar(
+                              backgroundColor: Colors.pink, radius: 5),
                           SizedBox(width: 4),
-                          Text('Air conditioner', style: TextStyle(fontSize: 12)),
+                          Text('Air conditioner',
+                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300)),
                         ],
                       ),
                     ],
@@ -249,29 +262,32 @@ Widget _carbonEmissionCard() {
 }
 
 
-  Widget _buildEnergyCounter(String title, int count, ValueChanged<int> onChanged) {
+  Widget _buildEnergyCounter(
+      String title, int count, ValueChanged<int> onChanged) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10.0), 
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300)),
+          Text(title,
+              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w300)),
           Row(
             children: [
               IconButton(
                 onPressed: () => onChanged(count - 1),
-                icon: SvgPicture.asset('assets/icons/dds2_remove-cir.svg', height: 14, width: 12),
+                icon: SvgPicture.asset('assets/icons/dds2_remove-cir.svg',
+                    height: 14, width: 12),
               ),
               Text(count.toString()),
               IconButton(
                 onPressed: () => onChanged(count + 1),
-                icon: SvgPicture.asset('assets/icons/dds2_add-cir.svg', height: 14, width: 12),
+                icon: SvgPicture.asset('assets/icons/dds2_add-cir.svg',
+                    height: 14, width: 12),
               ),
             ],
           ),
         ],
       ),
     );
-}
-
+  }
 }
