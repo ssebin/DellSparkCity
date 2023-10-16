@@ -2,9 +2,9 @@ import 'package:dellsparkcity/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'base_page.dart';
 import 'signin.dart';
-import 'package:firebase_core/firebase_core.dart';
+//import 'package:firebase_core/firebase_core.dart';
 
-//void main() => runApp(MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+/*
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -31,3 +32,4 @@ void main() async {
   );
   runApp(MyApp());
 }
+*/

@@ -4,7 +4,7 @@ import '../components/leaderboard_table.dart';
 import '../components/featured_teams.dart';
 import '../components/energy_marketplace.dart';
 import '../components/forum.dart';
-import 'package:http/http.dart' as http;
+//import 'package:http/http.dart' as http;
 
 class CommunityPage extends StatelessWidget {
   const CommunityPage({Key? key}) : super(key: key);
