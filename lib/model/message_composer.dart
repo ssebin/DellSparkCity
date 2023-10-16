@@ -15,7 +15,7 @@ class MessageComposer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
       color: Colors.white,
       child: SafeArea(
         child: Row(
@@ -23,13 +23,17 @@ class MessageComposer extends StatelessWidget {
             Expanded(
               child: !awaitingResponse
                   ? Material(
-                      elevation: 1,
                       borderRadius: BorderRadius.circular(10),
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
+                        width: double.infinity,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Color(0xff303139),
+                            width: 1,
+                          ),
                         ),
                         child: Stack(
                           alignment: Alignment.centerRight,
@@ -40,12 +44,15 @@ class MessageComposer extends StatelessWidget {
                               decoration: InputDecoration(
                                 hintText: 'Write your message',
                                 border: InputBorder.none,
-                                contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                                contentPadding: const EdgeInsets.symmetric(vertical: 10),
                                 suffixIcon: IconButton(
                                   onPressed: !awaitingResponse
                                       ? () => onSubmitted(_messageController.text)
                                       : null,
-                                  icon: const Icon(Icons.send),
+                                  icon: Icon(
+                                    Icons.send,
+                                    color: Colors.grey, // Set the icon color to grey
+                                  ),
                                 ),
                               ),
                             ),
@@ -62,7 +69,7 @@ class MessageComposer extends StatelessWidget {
                           child: CircularProgressIndicator(),
                         ),
                         Padding(
-                          padding: EdgeInsets.all(16),
+                          padding: EdgeInsets.all(12),
                           child: Text('Fetching response...'),
                         ),
                       ],

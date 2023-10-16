@@ -56,6 +56,8 @@ class TipsCard extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
+                      elevation: 4.0, // Add shadow
+                      shadowColor: Colors.grey.withOpacity(0.8), // Shadow color
                       child: SizedBox(
                         width: width,
                         height: cardHeight,

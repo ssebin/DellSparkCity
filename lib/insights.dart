@@ -1,8 +1,8 @@
 //import 'package:dellsparkcity/chatgpt_card.dart';
+//import 'package:dellsparkcity/chatgpt_card.dart';
 import 'package:dellsparkcity/model/chat_api.dart';
 import 'package:dellsparkcity/model/chat_page.dart';
 import 'package:dellsparkcity/prediction_card.dart';
-//import 'package:dellsparkcity/prediction_card.dart';
 import 'package:dellsparkcity/tips_card.dart';
 import 'package:flutter/material.dart';
 
@@ -57,8 +57,8 @@ class InsightsPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-      
               ChatPage(chatApi: chatApi),
+              //ChatGPTCard(),
               const SizedBox(height: 5),
             ],
           ),
@@ -67,4 +67,3 @@ class InsightsPage extends StatelessWidget {
     );
   }
 }
-
