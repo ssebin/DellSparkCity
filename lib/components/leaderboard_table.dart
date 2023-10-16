@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 class LeaderboardTable extends StatelessWidget {
-  const LeaderboardTable({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +15,7 @@ class LeaderboardTable extends StatelessWidget {
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 7,
-            offset: const Offset(0, 3),
+            offset: Offset(0, 3),
           ),
         ],
       ),
@@ -26,20 +24,20 @@ class LeaderboardTable extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(bottom: 0.0, top: 0),
-            child: SizedBox(
+            child: Container(
               width: 500,
               child: TextField(
-                style: const TextStyle(fontSize: 14.0),
+                style: TextStyle(fontSize: 14.0),
                 decoration: InputDecoration(
                   hintText: 'Search a floor',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(4.0),
                   ),
-                  contentPadding: const EdgeInsets.symmetric(
+                  contentPadding: EdgeInsets.symmetric(
                     vertical: 8.0,
                     horizontal: 12.0,
                   ),
-                  prefixIcon: const Icon(Icons.search),
+                  prefixIcon: Icon(Icons.search),
                 ),
               ),
             ),
@@ -48,7 +46,7 @@ class LeaderboardTable extends StatelessWidget {
             child: ListView(
               children: [
                 DataTable(
-                  columns: const [
+                  columns: [
                     DataColumn(label: Text('No.')),
                     DataColumn(label: Text('Floor')),
                     DataColumn(label: Text('Consumption/kWh')),

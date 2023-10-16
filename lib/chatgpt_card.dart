@@ -3,8 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 //import 'package:dart_openai/dart_openai.dart';
 
 class ChatGPTCard extends StatelessWidget {
-  const ChatGPTCard({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -23,15 +21,15 @@ class ChatGPTCard extends StatelessWidget {
               ),
               SvgPicture.asset('assets/icons/chat-bot 1.svg',
                   height: 14, width: 12, color: Colors.black),
-              const SizedBox(width: 8),
+              SizedBox(width: 8),
             ],
           ),
         ),
-        const SizedBox(height: 0),
+        SizedBox(height: 0),
         Padding(
           padding: const EdgeInsets.only(
               left: 16.0, right: 8.0, top: 0, bottom: 0),
-          child: SizedBox(
+          child: Container(
             height: 310,
             //constraints: BoxConstraints(maxHeight: 310),
             child: Card(
@@ -46,19 +44,20 @@ class ChatGPTCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         'Do you need any suggestions?',
                         style: TextStyle(fontSize: 16),
                       ),
-                      const SizedBox(height: 10),
-                      SizedBox(
+                      SizedBox(height: 10),
+                      Container(
                         height: 50,
                         child: TextField(
-                          style: const TextStyle(height: 1.5),
+                          style: TextStyle(height: 1.5),
                           decoration: InputDecoration(
                             hintText: 'How can I reduce the bills?',
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10), // Add rounded corners
+                              borderRadius: BorderRadius.circular(
+                                  10), // Add rounded corners
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
@@ -74,7 +73,7 @@ class ChatGPTCard extends StatelessWidget {
                               color: Colors.transparent,
                               clipBehavior: Clip.hardEdge,
                               child: IconButton(
-                                icon: const Icon(Icons.send),
+                                icon: Icon(Icons.send),
                                 onPressed: () {
                                   // Handle the send button press here
                                 },
@@ -85,12 +84,12 @@ class ChatGPTCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 20),
-                      const Text(
+                      SizedBox(height: 20),
+                      Text(
                         'Some questions to start you with',
                         style: TextStyle(fontSize: 14),
                       ),
-                      const SizedBox(height: 10),
+                      SizedBox(height: 10),
                       Wrap(
                         spacing: 10,
                         runSpacing: 10,
@@ -124,6 +123,7 @@ class ChatGPTCard extends StatelessWidget {
       onPressed: () {
         // Handle the suggestion button press here
       },
+      child: Text(text),
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(Colors.blue),
         foregroundColor: MaterialStateProperty.all(Colors.white),
@@ -133,7 +133,6 @@ class ChatGPTCard extends StatelessWidget {
           ),
         ),
       ),
-      child: Text(text),
     );
   }
 }
