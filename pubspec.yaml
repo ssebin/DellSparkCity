@@ -64,7 +64,7 @@ flutter:
   assets:
    - assets/icons/
    - assets/Answer-User.png
-   - assets/background_image.png
+   - assets/background_image.jpg
    - assets/biomass.jpg
    - assets/hydrogen.webp
    - assets/Question-User.png
