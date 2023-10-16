@@ -1,3 +1,4 @@
+import 'package:dellsparkcity/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'base_page.dart';
 
@@ -7,13 +8,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: BasePage(),
+      home: BasePage(
+        child: DashboardPage(),
+      ),
       debugShowCheckedModeBanner:
           false, // Set to false to hide the debug banner
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          elevation: 0, // Set elevation to 0 to remove the shadow effect
-        ),
+        fontFamily: 'Roboto', // Set the default font family to Roboto
       ),
     );
   }
