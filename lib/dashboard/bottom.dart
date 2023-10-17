@@ -8,7 +8,8 @@ class BottomSection extends StatefulWidget {
 //const BottomSection({super.key});
 bool isAirConditioningOn = false;
 bool isLightOn = false;
-
+bool isAirConditioningOn2 = false;
+bool isLightOn2 = false;
 //_CentralControlWidgetState createState() => _CentralControlWidgetState();
 
 // class _CentralControlWidgetState extends State<BottomSection> {
@@ -18,6 +19,7 @@ bool isLightOn = false;
 
 class _AirConditioningControlWidgetState extends State<BottomSection> {
   bool isAirConditioningOn = false;
+  bool isAirConditioningOn2 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -52,8 +54,10 @@ class _AirConditioningControlWidgetState extends State<BottomSection> {
 
             //CS CARD STARTS HERE
             child: Padding(
-                padding: const EdgeInsets.only(top: 30.0, left: 30.0),
+                //padding: const EdgeInsets.only(top: 30.0, left: 30.0),
+                padding: EdgeInsets.all(10.0),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
                       width: 530,
@@ -399,10 +403,10 @@ class _AirConditioningControlWidgetState extends State<BottomSection> {
                                                             activeColor:
                                                                 Colors.blue,
                                                             value:
-                                                                isAirConditioningOn,
+                                                                isAirConditioningOn2,
                                                             onChanged: (value) {
                                                               setState(() {
-                                                                isAirConditioningOn =
+                                                                isAirConditioningOn2 =
                                                                     value;
                                                               });
                                                             },
@@ -457,10 +461,10 @@ class _AirConditioningControlWidgetState extends State<BottomSection> {
                                                       Switch(
                                                         activeColor:
                                                             Colors.blue,
-                                                        value: isLightOn,
+                                                        value: isLightOn2,
                                                         onChanged: (value) {
                                                           setState(() {
-                                                            isLightOn = value;
+                                                            isLightOn2 = value;
                                                           });
                                                         },
                                                       ),
@@ -521,7 +525,10 @@ class _AirConditioningControlWidgetState extends State<BottomSection> {
                               ])),
                     )
                   ],
-                )))
+                ))),
+
+        const SizedBox(
+            height: 30.0), // Add horizontal spacing between the columns
 
         //CS CARD ENDS HERE
       ], //END OF WHOLE CONTAINER
